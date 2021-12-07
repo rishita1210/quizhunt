@@ -1,0 +1,205 @@
+<html>
+    <head>
+    <link rel="icon" href="logo2.png">
+     <title>Computers</title>
+     <style>
+        body
+        {
+            background:url(bgimg.png);
+            min-height: 50vh;
+            scroll-behavior: smooth;
+        }
+         #sidenav {
+                width: 150px;
+                height: 120vh;
+                position: fixed;
+                right: -270px;
+                top: 0px;
+                background:#db604e;
+                z-index: 2;
+                transition: 0.5s;
+            }
+            nav ul li{
+                list-style: none;
+                margin: 100px 40px;
+                top: 10px;
+                margin: 20px auto 1px;
+                font-weight: 600;
+                font-size: 1.3em;
+            }
+            nav ul li a{
+                left: -10px;
+                top: 50px;
+                width: 100px;
+                text-decoration: none;
+                display: inline-block;
+                margin: 10px -20px;
+                padding: 5px 17px;
+                color: #ebebe0;
+                border:none;
+                position: relative;
+                z-index: 1;
+                transition: color 0.5s;
+                font-weight: 600;
+            }
+            nav ul li a span{
+                width: 0%;
+                height: 100%;
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                background: #ebebe0;
+                z-index: -1;
+                transition: 0.5s;
+            }
+            nav ul li a:hover span{
+                width: 100%;
+            }
+            nav ul li a:hover{
+                color: #db604e;
+            }
+            #menuBtn{
+                 width: 50px;
+                 height: 60px;
+                 background: #db604e;
+                 text-align:center;
+                 position: fixed;
+                 right: 15px;
+                 top: 20;
+                 border-radius: 3px;
+                 z-index: 3;
+                 cursor: pointer;
+             }
+             #menuBtn img{
+                width: 25px;
+                margin-top: 17px;
+            }
+            section{
+                position: relative;
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+            }
+            section img{
+                position: relative;
+                margin-top: 0px;
+                margin: left 50px;
+                width: 100%;
+                height: 550px;
+                object-fit: curtain;
+            }
+            #text{
+                position: absolute;
+                color: #fff;
+                white-space: nowrap;
+                font-size: 7.5vw; 
+                z-index: 1;
+                background-color: #db604e ;
+                right: 180px;
+                top: 150px;
+            }
+            .sec{
+                position: relative;
+                padding: 100px;
+                background: #ebebe0;
+            }
+            .sec h2{
+                font-size: 3.5em;
+                margin-bottom: 10px;
+                color: #db604e;
+            }
+            .sec p{
+                font-size: 1.2em;
+                color:#089c9c;
+                justify-content: right;
+            }
+            .sec1 h4{
+                font-size: 1.2em;
+                color:#089c9c;
+                justify-content: right;
+            }
+            .sec1 b{
+                font-size: 1.2em;
+                color:#089c9c;
+                justify-content: right;
+            }
+            .sec1 p{
+                font-size: 1.2em;
+                color:#089c9c;
+                justify-content: right;
+            }
+     </style>   
+    </head>
+    <body>
+        <div id="sidenav">
+            <nav>
+                <ul>
+                    <li><a href="class6.html" target="_blank"><span></span>CLASS 6</a></li>
+                    <li><a href="class7.html" target="_blank"><span></span>CLASS 7</a></li>
+                    <li><a href="class8.html" target="_blank"><span></span>CLASS 8</a></li>
+                    <li><a href="class9.html" target="_blank"><span></span>CLASS 9</a></li>
+                    <li><a href="class10.html" target="_blank"><span></span>CLASS 10</a></li>
+                    <li><a href="class11.html" target="_blank"><span></span>CLASS 11</a></li>
+                    <li><a href="class12.html" target="_blank"><span></span>CLASS 12</a></li>
+                </ul>
+            </nav>
+            </div>
+        <div id="menuBtn">
+            <img src="menu.png" id="menu">
+        </div>
+        <script>
+            var menuBtn = document.getElementById("menuBtn")
+            var sidenav = document.getElementById("sidenav")
+            var menu = document.getElementById("menu")
+            sidenav.style.right="-250px";
+            menuBtn.onclick = function(){
+                if(sidenav.style.right=="-250px") {
+                    sidenav.style.right="0";
+                    menu.src = "close.png";
+                }
+            else{
+                sidenav.style.right="-250px";
+                menu.src = "menu.png";
+                }
+            }
+        </script>
+        <section>
+            <h2 id="text">Digital Lesson Plan</h2>
+            <img src="comp.png" id="comp">
+            </section>
+        <div class="sec">
+            <h2>What Is Computer?</h2>
+            <p>
+                A computer is a programmable electronic device that accepts raw data as input and processes it with a set of instructions (a program) to produce the result as output. It renders output just after performing mathematical and logical operations and can save the output for future use. It can process numerical as well as non-numerical calculations. The term "computer" is derived from the Latin word "computare" which means to calculate.
+                <br><br> A computer is designed to execute applications and provides a variety of solutions through integrated hardware and software components. It works with the help of programs and represents the decimal numbers through a string of binary digits. It also has a memory that stores the data, programs, and result of processing. The components of a computer such as machinery that includes wires, transistors, circuits, hard disk are called hardware. Whereas, the programs and data are called software.
+                <br><br>It is believed that the Analytical Engine was the first computer which was invented by Charles Babbage in 1837. It used punch cards as read-only memory. Charles Babbage is also known as the father of the computer.
+                <br><br> 
+                <div class="sec1"><p><h4>The basic parts without which a computer cannot work are as follows:</h4> 
+                <b>Processor:</b> It executes instructions from software and hardware.<br>
+                <b>Memory:</b> It is the primary memory for data transfer between the CPU and storage.<br>
+                <b>Motherboard:</b> It is the part that connects all other parts or components of a computer.<br>
+                <b>Sorage Device:</b> It permanently stores the data, e.g., hard drive.<br>
+                <b>Input Device:</b> It allows you to communicate with the computer or to input data, e.g., a keyboard.<br>
+                <b>Output Device</b> It enables you to see the output, e.g., monitor.<br>
+                <h4>Computers are divided into different types based on different criteria. Based on the size, a computer can be divided into five types:</h4> 
+                <b>1. Micro Computer:</b><br>
+It is a single-user computer which has less speed and storage capacity than the other types. It uses a microprocessor as a CPU. The first microcomputer was built with 8-bit microprocessor chips. The common examples of microcomputers include laptops, desktop computers, personal digital assistant (PDA), tablets, and smartphones. Microcomputers are generally designed and developed for general usage like browsing, searching for information, internet, MS Office, social media, etc.<br>
+<b>2. Mini Computer:</b><br>
+Mini-computers are also known as "Midrange Computers." They are not designed for a single. They are multi-user computers designed to support multiple users simultaneously. So, they are generally used by small businesses and firms. Individual departments of a company use these computers for specific purposes. For example, the admission department of a University can use a Mini-computer for monitoring the admission process.<br>
+<b>3. Mainframe Computer:</b><br>
+It is also a multi-user computer capable of supporting thousands of users simultaneously. They are used by large firms and government organizations to run their business operations as they can store and process large amounts of data. For example, Banks, universities, and insurance companies use mainframe computers to store the data of their customers, students, and policyholders, respectively.<br>
+<b>4. Super Computer:</b><br>
+Super-computers are the fastest and most expensive computers among all types of computers. They have huge storage capacities and computing speeds and thus can perform millions of instructions per second. The super-computers are task-specific and thus used for specialized applications such as large-scale numerical problems in scientific and engineering disciplines including applications in electronics, petroleum engineering, weather forecasting, medicine, space research and more. For example, NASA uses supercomputers for launching space satellites and monitoring and controlling them for space exploration.<br>
+<b>5. Workstation Computer:</b><br>
+It is a single-user computer. Although it is like a personal computer, it has a more powerful microprocessor and a higher-quality monitor than a microcomputer. In terms of storage capacity and speed, it comes between a personal computer and minicomputer. Work stations are generally used for specialized applications such as desktop publishing, software development, and engineering designs.<br></div></p>
+ </p></div>
+        <script>
+          let text = document.getElementById('text');
+          
+          window.addEventListener('scroll',function(){
+          let value = window.scrollY;
+          text.style.marginRight = value * 4 + 'px'; 
+         })
+        </script>
+    </body>

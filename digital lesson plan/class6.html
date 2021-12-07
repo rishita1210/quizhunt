@@ -1,0 +1,935 @@
+<html>
+<head>
+    <link rel="icon" href="logo2.png">
+    <title>Class 6</title>
+    <style>
+         #sidenav {
+                width: 150px;
+                height: 120vh;
+                position: fixed;
+                right: -270px;
+                top: 0px;
+                background:#db604e;
+                z-index: 2;
+                transition: 0.5s;
+            }
+            nav ul li{
+                list-style: none;
+                margin: 100px 40px;
+                top: 10px;
+                margin: 20px auto 1px;
+            }
+            nav ul li a{
+                left: -10px;
+                top: 50px;
+                width: 100px;
+                text-decoration: none;
+                display: inline-block;
+                margin: 10px -20px;
+                padding: 5px 17px;
+                color: #ebebe0;
+                border:none;
+                position: relative;
+                z-index: 1;
+                transition: color 0.5s;
+            }
+            nav ul li a span{
+                width: 0%;
+                height: 100%;
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                background: #ebebe0;
+                z-index: -1;
+                transition: 0.5s;
+            }
+            nav ul li a:hover span{
+                width: 100%;
+            }
+            nav ul li a:hover{
+                color: #db604e;
+            }
+            #menuBtn{
+                 width: 50px;
+                 height: 60px;
+                 background: #db604e;
+                 text-align:center;
+                 position: fixed;
+                 right: 15px;
+                 top: 20;
+                 border-radius: 3px;
+                 z-index: 3;
+                 cursor: pointer;
+             }
+             #menuBtn img{
+                width: 25px;
+                margin-top: 17px;
+            }
+            .header h1{
+             text-align: center;  
+             font-family: Verdana, Geneva, Tahoma, sans-serif; 
+             color:#db604e;
+             font-size: 3em;
+             background-color: #ebebe0;
+            }
+            .ques{
+            
+                font-size: 1.7em;
+                color: #ebebe0;   
+            }
+            .wrapper a{
+                display: inline-block;
+                text-decoration: none;
+                background-color: #db604e;
+                padding: 20px;
+                border-radius: 3px;
+                text-transform: uppercase;
+                color: #ebebe0; 
+                height: 3vh;
+                margin-top: 1vh;
+            }
+            .modal{
+                position: fixed;
+                top: 90px;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                display:flex ;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.4s;
+                visibility: hidden;
+                opacity: 0;
+            }
+            .modal:target{
+                visibility: visible;
+                opacity: 1;
+            }
+            .modalcontent{
+                position: relative;
+                background: #ebebe0;
+                width: 500px;
+                max-width:90% ;
+                padding: 1em 2em;
+                border-radius: 4px;
+            }
+            .modalcontent h1{
+                color: #089c9c;
+                font-size: 1.2em;
+            }
+            .modalcontent p{
+                color: #000;
+            }
+            a{
+               font-size: 21px;
+               
+            }
+            .modalclose{
+                position: absolute;
+                top: 0;
+                right: 15px;
+                color: #089c9c;
+                text-decoration: none;
+                font-size: 36px;
+            }
+            .wrapper2 a{
+                display: inline-block;
+                text-decoration: none;
+                background-color: #db604e;
+                padding: 20px;
+                border-radius: 3px;
+                text-transform: uppercase;
+                color: #ebebe0; 
+                height: 3vh;
+                margin-top: 1vh;
+            }
+            .modal2{
+                position: fixed;
+                top: 90px;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.4s;
+                visibility: hidden;
+                opacity: 0;
+            }
+            .modal2:target{
+                visibility: visible;
+                opacity: 1;
+            }
+            .modalcontent2{
+                position: relative;
+                background: #ebebe0;
+                width: 500px;
+                max-width:100% ;
+                padding: 1em 2em;
+                border-radius: 4px;
+            }
+            .modalcontent2 h1{
+                color: #089c9c;
+                font-size: 1.2em;
+            }
+            .modalcontent2 p{
+                color: #000;
+            }
+            a{
+               font-size: 21px;
+               font-weight: 600; 
+            }
+            .modalclose2{
+                position: absolute;
+                top: 0;
+                right: 15px;
+                color: #089c9c;
+                text-decoration: none;
+                font-size: 36px;
+            }
+            .wrapper3 a{
+                display: inline-block;
+                text-decoration: none;
+                background-color: #db604e;
+                padding: 20px;
+                border-radius: 3px;
+                text-transform: uppercase;
+                color: #ebebe0; 
+                height: 3vh;
+                margin-top: 1vh;
+            }
+            .modal3{
+                position: fixed;
+                top: 90px;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.4s;
+                visibility: hidden;
+                opacity: 0;
+            }
+            .modal3:target{
+                visibility: visible;
+                opacity: 1;
+            }
+            .modalcontent3{
+                position:relative;
+                background: #ebebe0;
+                width: 500px;
+                max-width:90% ;
+                padding: 1em 2em;
+                border-radius: 4px;
+            }
+            .modalcontent3 h1{
+                color: #089c9c;
+                font-size: 1.2em;
+            }
+            .modalcontent3 p{
+                color: #000;
+            }
+            a{
+               font-size: 21px;
+               font-weight: 600; 
+            }
+            .modalclose3{
+                position: absolute;
+                top: 0;
+                right: 15px;
+                color: #089c9c;
+                text-decoration: none;
+                font-size: 36px;
+            }
+            .wrapper4 a{
+                display: inline-block;
+                text-decoration: none;
+                background-color: #db604e;
+                padding: 20px;
+                border-radius: 3px;
+                text-transform: uppercase;
+                color: #ebebe0; 
+                height: 3vh;
+                margin-top: 1vh;
+            }
+            .modal4{
+                position: fixed;
+                top: 90px;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.4s;
+                visibility: hidden;
+                opacity: 0;
+            }
+            .modal4:target{
+                visibility: visible;
+                opacity: 1;
+            }
+            .modalcontent4{
+                position: relative;
+                background: #ebebe0;
+                width: 500px;
+                max-width:90% ;
+                padding: 1em 2em;
+                border-radius: 4px;
+            }
+            .modalcontent4 h1{
+                color: #089c9c;
+                font-size: 1.2em;
+            }
+            .modalcontent4 p{
+                color: #000;
+            }
+            a{
+               font-size: 21px;
+               font-weight: 600; 
+            }
+            .modalclose4{
+                position: absolute;
+                top: 0;
+                right: 15px;
+                color: #089c9c;
+                text-decoration: none;
+                font-size: 36px;
+            }  
+            .wrapper5 a{
+                display: inline-block;
+                text-decoration: none;
+                background-color: #db604e;
+                padding: 20px;
+                border-radius: 3px;
+                text-transform: uppercase;
+                color: #ebebe0; 
+                height: 3vh;
+                margin-top: 1vh;
+            }
+            .modal5{
+                position: fixed;
+                top: 90px;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.4s;
+                visibility: hidden;
+                opacity: 0;
+            }
+            .modal5:target{
+                visibility: visible;
+                opacity: 1;
+            }
+            .modalcontent5{
+                position: relative;
+                background: #ebebe0;
+                width: 500px;
+                max-width:90% ;
+                padding: 1em 2em;
+                border-radius: 4px;
+            }
+            .modalcontent5 h1{
+                color: #089c9c;
+                font-size: 1.2em;
+            }
+            .modalcontent5 p{
+                color: #000;
+            }
+            a{
+               font-size: 21px;
+               font-weight: 600; 
+            }
+            .modalclose5{
+                position: absolute;
+                top: 0;
+                right: 15px;
+                color: #089c9c;
+                text-decoration: none;
+                font-size: 36px;
+            } 
+            .wrapper6 a{
+                display: inline-block;
+                text-decoration: none;
+                background-color: #db604e;
+                padding: 20px;
+                border-radius: 3px;
+                text-transform: uppercase;
+                color: #ebebe0; 
+                height: 3vh;
+                margin-top: 1vh;
+            }
+            .modal6{
+                position: fixed;
+                top: 90px;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.4s;
+                visibility: hidden;
+                opacity: 0;
+            }
+            .modal6:target{
+                visibility: visible;
+                opacity: 1;
+            }
+            .modalcontent6{
+                position: relative;
+                background: #ebebe0;
+                width: 500px;
+                max-width:90% ;
+                padding: 1em 2em;
+                border-radius: 4px;
+            }
+            .modalcontent6 h1{
+                color: #089c9c;
+                font-size: 1.2em;
+            }
+            .modalcontent6 p{
+                color: #000;
+            }
+            a{
+               font-size: 21px;
+               font-weight: 600; 
+            }
+            .modalclose6{
+                position: absolute;
+                top: 0;
+                right: 15px;
+                color: #089c9c;
+                text-decoration: none;
+                font-size: 36px;
+            }
+            .wrapper7 a{
+                display: inline-block;
+                text-decoration: none;
+                background-color: #db604e;
+                padding: 20px;
+                border-radius: 3px;
+                text-transform: uppercase;
+                color: #ebebe0; 
+                height: 3vh;
+                margin-top: 1vh;
+            }
+            .modal7{
+                position: fixed;
+                top: 90px;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.4s;
+                visibility: hidden;
+                opacity: 0;
+            }
+            .modal7:target{
+                visibility: visible;
+                opacity: 1;
+            }
+            .modalcontent7{
+                position: relative;
+                background: #ebebe0;
+                width: 500px;
+                max-width:90% ;
+                padding: 1em 2em;
+                border-radius: 4px;
+            }
+            .modalcontent7 h1{
+                color: #089c9c;
+                font-size: 1.2em;
+            }
+            .modalcontent7 p{
+                color: #000;
+            }
+            a{
+               font-size: 21px;
+               font-weight: 600; 
+            }
+            .modalclose7{
+                position: absolute;
+                top: 0;
+                right: 15px;
+                color: #089c9c;
+                text-decoration: none;
+                font-size: 36px;
+            }   
+            .wrapper8 a{
+                display: inline-block;
+                text-decoration: none;
+                background-color: #db604e;
+                padding: 20px;
+                border-radius: 3px;
+                text-transform: uppercase;
+                color: #ebebe0; 
+                height: 3vh;
+                margin-top: 1vh;
+            }
+            .modal8{
+                position: fixed;
+                top: 90px;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.4s;
+                visibility: hidden;
+                opacity: 0;
+            }
+            .modal8:target{
+                visibility: visible;
+                opacity: 1;
+            }
+            .modalcontent8{
+                position: relative;
+                background: #ebebe0;
+                width: 500px;
+                max-width:90% ;
+                padding: 1em 2em;
+                border-radius: 4px;
+            }
+            .modalcontent8 h1{
+                color: #089c9c;
+                font-size: 1.2em;
+            }
+            .modalcontent8 p{
+                color: #000;
+            }
+            a{
+               font-size: 21px;
+               font-weight: 600; 
+            }
+            .modalclose8{
+                position: absolute;
+                top: 0;
+                right: 15px;
+                color: #089c9c;
+                text-decoration: none;
+                font-size: 36px;
+            }
+            .wrapper9 a{
+                display: inline-block;
+                text-decoration: none;
+                background-color: #db604e;
+                padding: 20px;
+                border-radius: 3px;
+                text-transform: uppercase;
+                color: #ebebe0; 
+                height: 3vh;
+                margin-top: 1vh;
+            }
+            .modal9{
+                position: fixed;
+                top: 90px;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.4s;
+                visibility: hidden;
+                opacity: 0;
+            }
+            .modal9:target{
+                visibility: visible;
+                opacity: 1;
+            }
+            .modalcontent9{
+                position: relative;
+                background: #ebebe0;
+                width: 500px;
+                max-width:90% ;
+                padding: 1em 2em;
+                border-radius: 4px;
+            }
+            .modalcontent9 h1{
+                color: #089c9c;
+                font-size: 1.2em;
+            }
+            .modalcontent9 p{
+                color: #000;
+            }
+            a{
+               font-size: 21px;
+               font-weight: 600; 
+            }
+            .modalclose9{
+                position: absolute;
+                top: 0;
+                right: 15px;
+                color: #089c9c;
+                text-decoration: none;
+                font-size: 36px;
+            }
+            .wrapper10 a{
+                display: inline-block;
+                text-decoration: none;
+                background-color: #db604e;
+                padding: 20px;
+                border-radius: 3px;
+                text-transform: uppercase;
+                color: #ebebe0; 
+                height: 3vh;
+                margin-top: 1vh;
+            }
+            .modal10{
+                position: fixed;
+                top: 90px;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.4s;
+                visibility: hidden;
+                opacity: 0;
+            }
+            .modal10:target{
+                visibility: visible;
+                opacity: 1;
+            }
+            .modalcontent10{
+                position: relative;
+                background: #ebebe0;
+                width: 500px;
+                max-width:90% ;
+                padding: 1em 2em;
+                border-radius: 4px;
+            }
+            .modalcontent10 h1{
+                color: #089c9c;
+                font-size: 1.2em;
+            }
+            .modalcontent10 p{
+                color: #000;
+            }
+            a{
+               font-size: 21px;
+               font-weight: 600; 
+            }
+            .modalclose10{
+                position: absolute;
+                top: 0;
+                right: 15px;
+                color: #089c9c;
+                text-decoration: none;
+                font-size: 36px;
+            }
+</style>
+</head>
+<body bgcolor="#089c9c">
+    <div id="sidenav">
+        <nav>
+            <ul>
+                <li><a href="class6.html" target="_blank"><span></span>CLASS 6</a></li>
+                <li><a href="class7.html" target="_blank"><span></span>CLASS 7</a></li>
+                <li><a href="class8.html" target="_blank"><span></span>CLASS 8</a></li>
+                <li><a href="class9.html" target="_blank"><span></span>CLASS 9</a></li>
+                <li><a href="class10.html" target="_blank"><span></span>CLASS 10</a></li>
+                <li><a href="class11.html" target="_blank"><span></span>CLASS 11</a></li>
+                <li><a href="class12.html" target="_blank"><span></span>CLASS 12</a></li>
+               </ul>
+        </nav>
+        </div>
+    <div id="menuBtn">
+        <img src="menu.png" id="menu">
+    </div>
+    <script>
+        var menuBtn = document.getElementById("menuBtn")
+        var sidenav = document.getElementById("sidenav")
+        var menu = document.getElementById("menu")
+        sidenav.style.right="-250px";
+        menuBtn.onclick = function(){
+            if(sidenav.style.right=="-250px") {
+                sidenav.style.right="0";
+                menu.src = "close.png";
+            }
+        else{
+            sidenav.style.right="-250px";
+            menu.src = "menu.png";
+            }
+        }
+    </script>
+    <section>
+        <div class="header">
+        <h1>Multiple Choice Questions For Class 6</h1>
+    </div>
+    <div class="ques">
+        <h3>Question: 1</h3>
+        <p>
+            When your computer stops working suddenly, it is referred to as a ______<br>
+
+            (A) Penalty<br>
+            
+            (B) Death<br>
+            
+            (C) Die<br>
+            
+            (D) Crash<br>
+      <div class="wrapper">
+           <a href="#modalbox">View Answer</a>
+       </div>
+
+       <div id="modalbox" class="modal">
+           <div class="modalcontent">
+               <h1>Question: 1<br>
+                   Answer</h1>
+               <p>
+                (D) Crash
+               </p>
+               <a class="modalclose"  href="#showpopup">×</a>
+       </div>
+       </div>
+       <hr>
+       <h3>Question: 2</h3>
+        <p>
+            A central computer that holds collections programs for many PCs, workstations computers is a(n)<br>
+
+            (A) Laptop<br>
+            
+            (B) Server<br>
+            
+            (C) Minicomputer<br>
+            
+            (D) Supercomputer<br>
+        </p>
+        <div class="wrapper2">
+            <a href="#modalbox2">View Answer</a>
+        </div>
+ 
+        <div id="modalbox2" class="modal2">
+            <div class="modalcontent2">
+                <h1>Question: 2<br>Answer</h1>
+                <p>
+                     (B) Server
+                </p>  
+                <a class="modalclose2"  href="#showpopup">×</a>
+        </div>
+       </div>
+       <hr>
+       <h3>Question:3</h3>
+        <p>
+            Microcomputer hardware consists of three basic categories of physical equipment _____<br>
+
+            (A) Keyboard, monitor, hard drive<br>
+            
+            (B) System unit, input/output, secondary storage<br>
+            
+            (C) System unit, input/output, memory<br>
+            
+            (D) System unit, primary storage, secondary storage<br>
+            
+            
+        </p>
+        <div class="wrapper3">
+            <a href="#modalbox3" >View Answer</a>
+        </div>
+ 
+        <div id="modalbox3" class="modal3">
+            <div class="modalcontent3">
+                <h1>Question: 3<br>Answer</h1>
+                <p>
+                    (C) System unit, input/output, memory
+                </p>  
+        <a class="modalclose3"  href="#showpopup">×</a>
+        </div>
+       </div>
+       <hr>
+       <h3>Question:4</h3>
+    <p>
+        Microprocessor was introduced in which generation of computer?<br>
+
+(A) First Generation<br>
+
+(B) Second Generation<br>
+
+(C) Third Generation<br>
+
+(D) Fourth Generation<br>
+    </p>
+    <div class="wrapper4">
+        <a href="#modalbox4">View Answer</a>
+    </div>
+
+    <div id="modalbox4" class="modal4">
+        <div class="modalcontent4">
+            <h1>Question: 4<br>Answer</h1>
+            <p>
+                (D) Fourth Generation
+            </p>  
+    <a class="modalclose4" href="#showpopup">×</a>
+    </div>
+   </div>
+   <hr>
+   <h3>Question:5</h3>
+<p>
+    Every computer has a(n) ____; many also have ____<br>
+
+(A) Application programs; an operating system<br>
+
+(B) Application programs; a client system<br>
+
+(C) Operating system; application programs<br>
+
+(D) Operating system; a client system<br>
+</p>
+<div class="wrapper5">
+    <a href="#modalbox5">View Answer</a>
+</div>
+
+<div id="modalbox5" class="modal5">
+    <div class="modalcontent5">
+        <h1>Question: 5<br>Answer</h1>
+        <p>
+            (C) Operating system; application programs
+        </p>  
+<a class="modalclose5" href="#showpopup">×</a>
+</div>
+</div>
+<hr>
+<h3>Question:6</h3>
+<p>
+    EEPROM stands for<br>
+
+(A) Electrically Erasable Principal Read Only Memory<br>
+
+(B) Electronics and Electrical Programmable Read Only Memory<br>
+
+(C) Elementary Erasable Programmable Read Only Memory<br>
+
+(D) Electrically Erasable Programmable Read Only Memory<br>
+</p>
+<div class="wrapper6">
+    <a href="#modalbox6">View Answer</a>
+</div>
+
+<div id="modalbox6" class="modal6">
+    <div class="modalcontent6">
+        <h1>Question: 6<br>Answer</h1>
+        <p>
+            (D)Electrically Erasable Programmable Read Only Memory
+        </p>  
+<a class="modalclose6" href="#showpopup">×</a>
+</div>
+</div>
+<hr>
+<h3>Question:7</h3>
+<p>
+    Codes consisting of light and dark marks which may be optically read, is known as<br>
+
+    (A) Barcode<br>
+    
+    (B) Decoder<br>
+    
+    (C) Mnemonic<br>
+    
+    (D) All of these<br>
+</p>
+<div class="wrapper7">
+    <a href="#modalbox7">View Answer</a>
+</div>
+
+<div id="modalbox7" class="modal7">
+    <div class="modalcontent7">
+        <h1>Question: 7<br>Answer</h1>
+        <p>
+            (A) Barcode
+        </p>  
+<a class="modalclose7" href="#showpopup">×</a>
+</div>
+</div>
+<hr>
+<h3>Question:8</h3>
+<p>
+    What is a non impact printer that can produce very high quality, letter perfect printing?<br>
+
+(A) Laser printer<br>
+
+(B) Dot matrix printer<br>
+
+(C) Electrostatic printer<br>
+
+(D) Daisy wheel printer<br>
+</p>
+<div class="wrapper8">
+    <a href="#modalbox8">View Answer</a>
+</div>
+
+<div id="modalbox8" class="modal8">
+    <div class="modalcontent8">
+        <h1>Question: 8<br>Answer</h1>
+        <p>
+            (A) Laser printer
+        </p>  
+<a class="modalclose8" href="#showpopup">×</a>
+</div>
+</div>
+<hr>
+<h3>Question:9</h3>
+<p>
+    CRT stands for<br>
+
+    (A) Completely Ready Tube<br>
+    
+    (B) Cathode Ray Tube<br>
+    
+    (C) Copper Rod Tube<br>
+    
+    (D) All of the above<br>
+</p>
+<div class="wrapper9">
+    <a href="#modalbox9">View Answer</a>
+</div>
+
+<div id="modalbox9" class="modal9">
+    <div class="modalcontent9">
+        <h1>Question: 9<br>Answer</h1>
+        <p>
+            (B) Cathode Ray Tube
+        </p>  
+<a class="modalclose9" href="#showpopup">×</a>
+</div>
+</div>
+<hr>
+<h3>Question:10</h3>
+<p>
+    Keyboard and are the examples of input device.<br>
+
+    (A) Mouse<br>
+    
+    (B) Printer<br>
+    
+    (C) Modem<br>
+    
+    (D) Monitor<br>
+</p>
+<div class="wrapper10">
+    <a href="#modalbox10">View Answer</a>
+</div>
+
+<div id="modalbox10" class="modal10">
+    <div class="modalcontent10">
+        <h1>Question: 10<br>Answer</h1>
+        <p>
+            (A) Mouse
+        </p>  
+<a class="modalclose10" href="#showpopup">×</a>
+</div>
+</div>
+<hr>
+       </div>
+       </section>
+       </body>
+       </html>
